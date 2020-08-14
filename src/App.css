@@ -1,38 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+    background: #111;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row {
+    color: #fff;
+    margin-left: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.row_posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.row_posters::-webkit-scrollbar {
+    display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.row__poster {
+    object-fit: contain;
+    width: 100%;
+    margin-right: 10px;
+    max-height: 100px;
+    transition: transform 0.4s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row__poster:hover {
+    transform: scale(1.08);
+}
+
+.row__poster_large {
+    max-height: 250px;
+}
+
+.row__poster_large:hover {
+    transform: scale(1.09);
+}
+
+/* banner */
+.banner {
+    color: #fff;
+    object-fit: contain;
+    height: 460px;
+    position: relative;
+}
+
+.banner__content {
+    padding-left: 30px;
+    padding-top: 160px;
+}
+
+.banner__content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.banner_buttons {
+    margin: 1rem 0;
+}
+
+.banner_button {
+    padding: 0.6rem 2.6rem;
+    border: none;
+    outline: none;
+    background: rgba(51, 51, 51, 0.6);
+    color: #fff;
+    margin-right: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.banner_button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+.banner_text {
+    width: 60%;
+    max-width: 800px;
+    line-height: 1.3;
+}
+
+.banner__fade {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0) 60%, #111111 100%);
+    pointer-events: none;
+}
+
+/* Nav */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    /* Animation */
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.nav_black {
+    background: #111;
+}
+
+.nav img {
+    display: block;
+    height: 30px;
+    cursor: pointer;
 }
